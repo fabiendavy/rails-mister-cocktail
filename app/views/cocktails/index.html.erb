@@ -1,14 +1,20 @@
 <div class="index">
+  <nav class="navbar navbar-light bg-light">
+    <p>Mister Cocktail</p>
+    <%= link_to "Add new cocktail", new_cocktail_path, class: "btn btn-info" %>
+  </nav>
   <div class="container">
-    <h1 class="text-center">Here is the list of all our cocktails</h1>
-    <div class="row d-flex justify-content-around">
+    <h1 class="text-center">Our cocktails</h1>
+    <div class="cards">
+
       <% @cocktails.each do |cocktail| %>
 
-        <div class="col-3 card-category">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image_url %>)">
           <%= link_to cocktail.name, cocktail_path(cocktail) %>
         </div>
 
-      <% end %>  
+      <% end %> 
+ 
     </div>
   </div>
 </div>

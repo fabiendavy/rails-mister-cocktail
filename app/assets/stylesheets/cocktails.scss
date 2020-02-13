@@ -5,7 +5,7 @@ h1 {
   margin: 50px 0;
 }
 
-.index a {
+.index .container a {
   color: white;
   &:hover {
     text-decoration: none;
@@ -15,5 +15,41 @@ h1 {
 
 .show a:hover {
   text-decoration: none;
-
 } 
+
+.show h1 {
+  margin: 0;
+  padding-top: 180px;
+}
+
+.banner {
+  height: 400px; 
+  color: white;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.cocktails-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.navbar {
+  height: 100px;
+  padding: 0 50px;
+  box-shadow: 2px 0 10px grey;
+}
+
+.cocktail-btn a { 
+  padding: 8px;
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+}
