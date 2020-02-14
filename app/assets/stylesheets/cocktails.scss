@@ -23,7 +23,7 @@ h1 {
 }
 
 .banner {
-  height: 400px; 
+  height: 450px; 
   color: white;
   background-position: center;
   background-size: cover;
@@ -52,4 +52,27 @@ h1 {
   &:hover {
     opacity: 1;
   }
+}
+
+.show input, .show textarea, .show select {
+  border-radius: 8px;
+}
+
+.show input[type=submit] {
+  border-radius: 50px;
+  padding: 12px 20px;
+  &:hover {
+    background-color: white;
+    border-color: #0466da;
+    color: #0466da;
+  }
+}
+
+.show .reviews {
+  margin-bottom: 50px;;
+}
+
+.show .reviews .reviews-content {
+  padding-top: 20px;
+  padding-left: 100px;
 }
