@@ -4,7 +4,7 @@
     <h1 class="text-center">New cocktail</h1>
       <%= simple_form_for(@cocktail) do |f| %>
         <%= f.input :name %>
-        <%= f.input :image_url %>
+        <%= f.input :image, as: :file %>
         <%= f.submit "Create the cocktail", class: "btn btn-primary" %>
       <% end %>
       <%= link_to "Cancel", cocktails_path, :class => "btn btn-info mt-3" %>
