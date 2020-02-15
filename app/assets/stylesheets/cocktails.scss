@@ -60,6 +60,10 @@ h1 {
   padding-top: 180px;
 }
 
+.show h3 {
+  margin: 50px 0;
+}
+
 .banner {
   height: 450px; 
   color: white;
@@ -113,4 +117,43 @@ h1 {
 .show .reviews .reviews-content {
   padding-top: 20px;
   padding-left: 100px;
+}
+
+.dose-description, .dose-form {
+  margin: 0 20px;
+
+}
+
+.doses, .reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .doses, .reviews {
+    grid-template-columns: 1fr;
+    margin: 0 20px;
+  }
+  .show .reviews .reviews-content {
+    padding-left: 50px;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .doses, .reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .doses, .reviews {
+    grid-template-columns: 1fr 1fr;
+  }
 }

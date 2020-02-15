@@ -2,6 +2,13 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show]
   def index
     @cocktails = Cocktail.all
+    @query = params[:search]
+    if !@query.nil?
+      @name = @query[:query]
+      @cocktails = Cocktail.select do |cocktail|
+        cocktail.name.include?(@name)
+      end
+    end
   end
 
   def show

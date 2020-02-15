@@ -9,10 +9,10 @@
   </div>
 
   <div class="container">
-    <div class="row doses d-flex justify-content-center">
-      <h3 class="text-center w-100 my-3">Composition</h3>
-      <div class="d-flex justify-content-around w-100">
-        <div class="col-6 dose-description w-100 m-4">
+    <div class="row d-flex justify-content-center">
+      <h3 class="text-center w-100">Composition</h3>
+      <div class="doses w-100">
+        <div class="dose-description">
           <% @cocktail.doses.each do |dose| %>
             <div class="dose d-flex justify-content-between">
               <%= dose.description %> of <%= dose.ingredient.name %>
@@ -23,7 +23,7 @@
           <% end %>
         </div>
 
-        <div class="col-6 dose-form w-100 m-4">
+        <div class="dose-form">
           <%= simple_form_for([@cocktail, @dose]) do |f| %>
             <%= f.input :description %>
             <%= f.association :ingredient %>
@@ -32,17 +32,17 @@
         </div>
       </div>
 
-      <div class="row reviews w-100 mb-5" id="review">
-        <h3 class="text-center w-100 my-3">Reviews</h3>
-        <div class="d-flex justify-content-around w-100">
-          <div class="col-6 w-100">
+      <div class="row w-100 mb-5" id="review">
+        <h3 class="text-center w-100">Reviews</h3>
+        <div class="reviews w-100">
+          <div class="review-form">
             <%= simple_form_for([@cocktail, @review]) do |f| %>
               <%= f.input :content %>
               <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5] %>
               <%= f.submit "Rate the drink", class: "btn btn-primary float-right" %>
             <% end %>          
           </div>
-          <div class="col-6 w-100 reviews-content">
+          <div class="w-100 reviews-content">
             <% @cocktail.reviews.each do |review| %>
               <p>
                 <span>
@@ -54,7 +54,6 @@
                   <% end %>
                 </span>
                 <span class="ml-4"><%= review.content %></span>
-                
               </p>
             <% end %>
           </div>
