@@ -10,9 +10,9 @@
           <%= simple_form_for :search, url: root_path, method: :get do |f| %>
             <div class="search-form-control">
               <%= f.input :query, label: false %>   
-              <%= f.submit "Go", class: "btn btn-secondary" do %>
+              <button name="button" type="submit" class="btn btn-flat">
                 <i class="fas fa-search"></i>
-              <% end %>
+              </button>
             </div>
           <% end %>
 
